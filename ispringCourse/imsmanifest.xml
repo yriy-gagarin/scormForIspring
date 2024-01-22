@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="850e65f2-7036-454b-9d40-85df9f7db158" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:adlseq="http://www.adlnet.org/xsd/adlseq_v1p3" xmlns:adlnav="http://www.adlnet.org/xsd/adlnav_v1p3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:lom="http://ltsc.ieee.org/xsd/LOM" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsss imsss_v1p0.xsd http://www.adlnet.org/xsd/adlcp_v1p3 adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlseq_v1p3 adlseq_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3 adlnav_v1p3.xsd http://ltsc.ieee.org/xsd/LOM lom.xsd">
+    <metadata>
+        <schema>ADL SCORM</schema>
+        <schemaversion>2004 4th Edition</schemaversion>
+        <lom:lom>
+            <lom:general>
+                <lom:title>
+                    <lom:string>Лонгрид без теста</lom:string>
+                </lom:title>
+            </lom:general>
+            <lom:metaMetadata></lom:metaMetadata>
+        </lom:lom>
+    </metadata>
+    <organizations default="c4c49765-b5d1-11ee-b79c-02ddc3066552_org">
+        <organization identifier="c4c49765-b5d1-11ee-b79c-02ddc3066552_org">
+            <title>Лонгрид без теста</title>
+            <item identifier="c4c49765-b5d1-11ee-b79c-02ddc3066552" identifierref="resource">
+                <title>Лонгрид без теста</title>
+                <imsss:sequencing>
+                    <imsss:deliveryControls completionSetByContent="true" objectiveSetByContent="true"></imsss:deliveryControls>
+                </imsss:sequencing>
+            </item>
+            <imsss:sequencing>
+                <imsss:controlMode flow="true"></imsss:controlMode>
+            </imsss:sequencing>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="resource" type="webcontent" adlcp:scormType="sco" href="res/index.html">
+            <file href="res/fonts/exo2/exo2-bold-italic.woff"></file>
+            <file href="res/fonts/exo2/exo2-bold.woff"></file>
+            <file href="res/fonts/exo2/exo2-italic.woff"></file>
+            <file href="res/fonts/exo2/exo2-regular.woff"></file>
+            <file href="res/fonts/fonts.css"></file>
+            <file href="res/fonts/ibm-plex-sans/ibm-plex-sans-bold-italic.woff"></file>
+            <file href="res/fonts/ibm-plex-sans/ibm-plex-sans-bold.woff"></file>
+            <file href="res/fonts/ibm-plex-sans/ibm-plex-sans-italic.woff"></file>
+            <file href="res/fonts/ibm-plex-sans/ibm-plex-sans-regular.woff"></file>
+            <file href="res/fonts/inter/inter-bold-italic.woff"></file>
+            <file href="res/fonts/inter/inter-bold.woff"></file>
+            <file href="res/fonts/inter/inter-italic.woff"></file>
+            <file href="res/fonts/inter/inter-regular.woff"></file>
+            <file href="res/fonts/inter/inter-semi-bold.woff"></file>
+            <file href="res/fonts/jb-mono/jb-mono-bold-italic.woff"></file>
+            <file href="res/fonts/jb-mono/jb-mono-bold.woff"></file>
+            <file href="res/fonts/jb-mono/jb-mono-italic.woff"></file>
+            <file href="res/fonts/jb-mono/jb-mono-regular.woff"></file>
+            <file href="res/fonts/lato/lato-bold-italic.woff"></file>
+            <file href="res/fonts/lato/lato-bold.woff"></file>
+            <file href="res/fonts/lato/lato-italic.woff"></file>
+            <file href="res/fonts/lato/lato-medium.woff"></file>
+            <file href="res/fonts/lato/lato-regular.woff"></file>
+            <file href="res/fonts/lato/lato-semibold.woff"></file>
+            <file href="res/fonts/merriweather/merriweather-bold-italic.woff"></file>
+            <file href="res/fonts/merriweather/merriweather-bold.woff"></file>
+            <file href="res/fonts/merriweather/merriweather-italic.woff"></file>
+            <file href="res/fonts/merriweather/merriweather-regular.woff"></file>
+            <file href="res/fonts/montserrat/montserrat-bold-italic.woff"></file>
+            <file href="res/fonts/montserrat/montserrat-bold.woff"></file>
+            <file href="res/fonts/montserrat/montserrat-italic.woff"></file>
+            <file href="res/fonts/montserrat/montserrat-regular.woff"></file>
+            <file href="res/fonts/nunito-sans/nunito-sans-bold-italic.woff"></file>
+            <file href="res/fonts/nunito-sans/nunito-sans-bold.woff"></file>
+            <file href="res/fonts/nunito-sans/nunito-sans-italic.woff"></file>
+            <file href="res/fonts/nunito-sans/nunito-sans-regular.woff"></file>
+            <file href="res/fonts/opensans/open-sans-bold-italic.woff"></file>
+            <file href="res/fonts/opensans/open-sans-bold.woff"></file>
+            <file href="res/fonts/opensans/open-sans-italic.woff"></file>
+            <file href="res/fonts/opensans/open-sans-regular.woff"></file>
+            <file href="res/fonts/ptserif/pt-serif-bold-italic.woff"></file>
+            <file href="res/fonts/ptserif/pt-serif-bold.woff"></file>
+            <file href="res/fonts/ptserif/pt-serif-italic.woff"></file>
+            <file href="res/fonts/ptserif/pt-serif-regular.woff"></file>
+            <file href="res/fonts/roboto/roboto-bold-italic.woff"></file>
+            <file href="res/fonts/roboto/roboto-bold.woff"></file>
+            <file href="res/fonts/roboto/roboto-italic.woff"></file>
+            <file href="res/fonts/roboto/roboto-regular.woff"></file>
+            <file href="res/fonts/roboto/roboto-v20-latin_cyrillic-500.woff"></file>
+            <file href="res/fonts/roboto/roboto-v20-latin_cyrillic-500.woff2"></file>
+            <file href="res/fonts/robotoslab/roboto-slab-bold.woff"></file>
+            <file href="res/fonts/robotoslab/roboto-slab-regular.woff"></file>
+            <file href="res/js/core-polyfill.min.js"></file>
+            <file href="res/js/css-vars-ponyfill.min.js"></file>
+            <file href="res/js/fast-average-color.min.js"></file>
+            <file href="res/js/focus-visible.min.js"></file>
+            <file href="res/js/highlight.min.js"></file>
+            <file href="res/js/hyper.min.js"></file>
+            <file href="res/js/immer.umd.js"></file>
+            <file href="res/js/output.min.js"></file>
+            <file href="res/js/polyfills.min.js"></file>
+            <file href="res/js/protobuf.min.js"></file>
+            <file href="res/js/reatom.umd.js"></file>
+            <file href="res/js/resizeobserver.js"></file>
+            <file href="res/js/runtypes.umd.js"></file>
+            <file href="res/js/url-polyfill.min.js"></file>
+            <file href="res/unsupportedBrowser/fonts/common-fonts-inter.css"></file>
+            <file href="res/unsupportedBrowser/fonts/common-fonts.css"></file>
+            <file href="res/unsupportedBrowser/fonts/inter/inter-v13-cyrillic_latin_latin-ext-500.woff2"></file>
+            <file href="res/unsupportedBrowser/fonts/inter/inter-v13-cyrillic_latin_latin-ext-700.woff2"></file>
+            <file href="res/unsupportedBrowser/fonts/inter/inter-v13-cyrillic_latin_latin-ext-regular.woff2"></file>
+            <file href="res/unsupportedBrowser/fonts/roboto/roboto-v29-latin-ext_latin_cyrillic-500.woff2"></file>
+            <file href="res/unsupportedBrowser/fonts/roboto/roboto-v29-latin-ext_latin_cyrillic-700.woff2"></file>
+            <file href="res/unsupportedBrowser/fonts/roboto/roboto-v29-latin-ext_latin_cyrillic-regular.woff2"></file>
+            <file href="res/unsupportedBrowser/unsupported-browser.html"></file>
+            <file href="res/unsupportedBrowser/unsupported-browser.js"></file>
+            <file href="res/unsupportedBrowser/unsupportedBrowserImages/Chrome.png"></file>
+            <file href="res/unsupportedBrowser/unsupportedBrowserImages/Edge.png"></file>
+            <file href="res/unsupportedBrowser/unsupportedBrowserImages/Firefox.png"></file>
+            <file href="res/unsupportedBrowser/unsupportedBrowserImages/Safari.png"></file>
+            <file href="res/goodbye.html"></file>
+            <file href="res/index.html"></file>
+            <file href="res/connectors/scorm.min.js"></file>
+            <file href="res/lng/ru-RU/messages.json"></file>
+            <file href="res/styles/bundle.css"></file>
+            <file href="res/data-1.json"></file>
+        </resource>
+    </resources>
+</manifest>
