@@ -21,35 +21,11 @@
   <script src="connectors/scorm.min.js"></script>
   <link href="fonts/fonts.css" rel="stylesheet">
   <link href="styles/bundle.css" rel="stylesheet">
-
 </head>
 <body>
 <script>
-  // SCORM 2004 emulation for debugging
-  window["API_1484_11"] = {
-    Initialized: true,
-    Commit: (value) => {
-      console.log(`Commit: ${value}`);
-      return "true"
-    },
-    Initialize: () => {
-      console.log(`Initialize`);
-      return "true"
-    },
-    GetValue: (value) => {
-      console.log(`GetValue: ${value}`);
-      return ''
-    },
-    SetValue: (name, value) => {
-      console.log(`SetValue. name: ${name} | value: ${value} `)
-    },
-    Terminate: () => {
-      console.log(`Terminate`);
-      return "true"
-    },
-  };
-
   const score = 20;
+  const completionThreshold = 95;
   let LMS = null;
 
   function startFn(resumeState) {
@@ -57,9 +33,14 @@
 
     startPromise.then(_playerApi => {
       _playerApi.onClosePlayerRequest.add(() => {
-        console.log('onClosePlayerRequest');
-        LMS._lmsApi.setScore(score, 0, 100);
-        // LMS._lmsApi.setStatus(true, true);
+        if(_playerApi._longreadResult.progress >= completionThreshold){
+          LMS._lmsApi.setScore(score, 0, 100);
+          if(!_playerApi._longreadResult.completed){
+            // send "completion_status" value "completed" if the current progress is greater than the completion threshold
+            // warning! relevant only for scorm2004
+            LMS._lmsApi._getConnector().setValue("cmi.completion_status", "completed");
+          }
+        }
       });
     })
     return startPromise;

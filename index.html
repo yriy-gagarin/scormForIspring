@@ -16,6 +16,31 @@
 
 <body>
   <script src="js/app.js"></script>
+  <script type="text/javascript">
+    // SCORM 2004 emulation for debugging
+    window["API_1484_11"] = {
+      Initialized: true,
+      Commit: (value) => {
+        console.log(`Commit: ${value}`);
+        return "true"
+      },
+      Initialize: () => {
+        console.log(`Initialize`);
+        return "true"
+      },
+      GetValue: (value) => {
+        console.log(`GetValue: ${value}`);
+        return ''
+      },
+      SetValue: (name, value) => {
+        console.log(`SetValue. name: ${name} | value: ${value} `)
+      },
+      Terminate: () => {
+        console.log(`Terminate`);
+        return "true"
+      },
+    };
+  </script>
   <iframe src="ispringCourse/res/index.html"></iframe>
 </body>
 
