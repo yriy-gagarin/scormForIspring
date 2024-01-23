@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
-	<title>Лонгрид без теста</title>
-	<script src="unsupportedBrowser/unsupported-browser.js"></script>
-	<script src="js/polyfills.min.js"></script>
-	<script src="js/focus-visible.min.js"></script>
-	<script src="js/core-polyfill.min.js"></script>
-	<script src="js/css-vars-ponyfill.min.js"></script>
-	<script src="js/fast-average-color.min.js"></script>
-	<script src="js/hyper.min.js"></script>
-	<script src="js/highlight.min.js"></script>
-	<script src="js/protobuf.min.js"></script>
-	<script src="js/resizeobserver.js"></script>
-	<script src="js/immer.umd.js"></script>
-	<script src="js/reatom.umd.js"></script>
-	<script src="js/runtypes.umd.js"></script>
-	<script src="js/output.min.js"></script>
-	<script src="connectors/scorm.min.js"></script>
-	<link href="fonts/fonts.css" rel="stylesheet">
-	<link href="styles/bundle.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <title>Лонгрид без теста</title>
+  <script src="unsupportedBrowser/unsupported-browser.js"></script>
+  <script src="js/polyfills.min.js"></script>
+  <script src="js/focus-visible.min.js"></script>
+  <script src="js/core-polyfill.min.js"></script>
+  <script src="js/css-vars-ponyfill.min.js"></script>
+  <script src="js/fast-average-color.min.js"></script>
+  <script src="js/hyper.min.js"></script>
+  <script src="js/highlight.min.js"></script>
+  <script src="js/protobuf.min.js"></script>
+  <script src="js/resizeobserver.js"></script>
+  <script src="js/immer.umd.js"></script>
+  <script src="js/reatom.umd.js"></script>
+  <script src="js/runtypes.umd.js"></script>
+  <script src="js/output.min.js"></script>
+  <script src="connectors/scorm.min.js"></script>
+  <link href="fonts/fonts.css" rel="stylesheet">
+  <link href="styles/bundle.css" rel="stylesheet">
 
 </head>
 <body>
 <script>
+  // SCORM 2004 emulation for debugging
+  window["API_1484_11"] = {
+    Initialized: true,
+    Commit: (value) => {
+      console.log(`Commit: ${value}`);
+      return "true"
+    },
+    Initialize: () => {
+      console.log(`Initialize`);
+      return "true"
+    },
+    GetValue: (value) => {
+      console.log(`GetValue: ${value}`);
+      return ''
+    },
+    SetValue: (name, value) => {
+      console.log(`SetValue. name: ${name} | value: ${value} `)
+    },
+    Terminate: () => {
+      console.log(`Terminate`);
+      return "true"
+    },
+  };
+
+  const score = 20;
+  let LMS = null;
+
   function startFn(resumeState) {
-		return window.start('lng/ru-RU/messages.json', 'styles/bundle.css', resumeState, 'isspace', 'https://ispring.ru/go/watermark/product?p=isspace&l=ru-RU')
+		const startPromise = window.start('lng/ru-RU/messages.json', 'styles/bundle.css', resumeState, 'isspace', 'https://ispring.ru/go/watermark/product?p=isspace&l=ru-RU');
+
+    startPromise.then(_playerApi => {
+      _playerApi.onClosePlayerRequest.add(() => {
+        console.log('onClosePlayerRequest');
+        LMS._lmsApi.setScore(score, 0, 100);
+        // LMS._lmsApi.setStatus(true, true);
+      });
+    })
+    return startPromise;
 	}
+
 	window.onload = function() {
-		iSpring.roll.LMS.create({"apiVersion":"scorm2004","contentId":"31dfc854-c583-42ab-ad5b-7037ef6652c1","flags":0,"edition":"4"}, {})
-			.initialize(startFn)
+		LMS = iSpring.roll.LMS
+      .create({"apiVersion":"scorm2004","contentId":"31dfc854-c583-42ab-ad5b-7037ef6652c1","flags":0,"edition":"4"}, {});
+    LMS.initialize(startFn);
 	}
 </script>
 </body>
